@@ -1,3 +1,7 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +28,11 @@ namespace BusBiletCoreApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<IFirmaService, FirmaManager>();
+            services.AddSingleton<IFirmaDal, EfFirmaRepository>();
+
+            services.AddSingleton<IOtobusService, OtobusManager>();
+            services.AddSingleton<IOtobusDal, EfOtobusRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
