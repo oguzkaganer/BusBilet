@@ -1,15 +1,22 @@
-﻿using BusinessLayer;
+﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BusBiletCoreApplication.Controllers
 {
     public class FirmaController : Controller
-    { 
-        FirmaManager fm=new FirmaManager(new EfFirmaRepository());
+    {
+        IFirmaService _firmaService;
+
+        public FirmaController(IFirmaService firmaService)
+        {
+            _firmaService = firmaService;
+        }
+
+        //FirmaManager fm=new FirmaManager(new EfFirmaRepository());
         public IActionResult Index()
         {
-            var firmalar=fm.firmaListele();
+            var firmalar = _firmaService.firmaListele();
             return View(firmalar);
         }
     }
