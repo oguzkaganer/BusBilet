@@ -1,0 +1,42 @@
+﻿@using EntityLayer;
+@model List<Otobus>;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Otobus Id</th>
+            <th>Koltuk Sayısı</th>
+            <th>Wifi</th>
+            <th>Tv</th>
+            <th>Plaka</th>
+            <th>Marka</th>
+            <th>Model</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.otobusId</td>
+                <td>@item.koltukSayisi</td>
+                <td>@item.wifi</td>
+                <td>@item.tv</td>
+                <td>@item.plaka</td>
+                <td>@item.marka</td>
+                <td>@item.model</td>
+                <td><button type="button" class="btn btn-danger p-2">Sil</button></td>
+                <td><button type="button" class="btn btn-primary p-2">Güncelle</button></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<div class="d-flex justify-content-end p-2">
+    <button type="button" class="btn btn-success p-2">Ekle</button>
+</div>
+
