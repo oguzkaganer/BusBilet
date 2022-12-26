@@ -1,13 +1,14 @@
-﻿using DataAccessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessLayer
+namespace BusinessLayer.Concrete
 {
-    public class FirmaManager : IFirmaServis
+    public class FirmaManager : IFirmaService
     {
         IFirmaDal firmaDal;
 
@@ -18,13 +19,13 @@ namespace BusinessLayer
 
         public void firmaEkle(Firma firma)
         {
-        
-                firmaDal.insert(firma);                    
+
+            firmaDal.insert(firma);
         }
 
         public Firma firmaGetirById(int id)
         {
-            return firmaDal.get(x=>x.firmaId==id);
+            return firmaDal.get(x => x.firmaId == id);
         }
 
         public Firma firmaGetirByName(string ad)

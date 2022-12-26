@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusinessLayer
+namespace BusinessLayer.Abstract
 {
-    public interface IFirmaServis
+    public interface IFirmaService
     {
         void firmaEkle(Firma firma);
         void firmaSil(Firma firma);
