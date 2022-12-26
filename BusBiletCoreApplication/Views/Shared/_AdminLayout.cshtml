@@ -60,7 +60,7 @@
                 Arayüz
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            @*<!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -70,6 +70,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="../Firma/Index">Listele</a>
                         <a class="collapse-item" href="buttons.html">Buttons</a>
                         <a class="collapse-item" href="cards.html">Cards</a>
                     </div>
@@ -117,6 +118,28 @@
                         <a class="collapse-item" href="blank.html">Blank Page</a>
                     </div>
                 </div>
+            </li>*@
+
+            <!-- Nav Item - Firmalar -->
+            <li class="nav-item">
+                <a class="nav-link" href="../Firma/Index">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Firmalar</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Otobüsler -->
+            <li class="nav-item">
+                <a class="nav-link" href="../Otobus/Index">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Otobüsler</span></a>
+            </li>
+
+            <!-- Nav Item - Kullanıcılar -->
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Kullanıcılar</span></a>
             </li>
 
             <!-- Nav Item - Güzergahlar -->
@@ -274,7 +297,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="~/admin_dashboard/img/undraw_profile_1.svg"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -286,7 +309,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="~/admin_dashboard/img/undraw_profile_2.svg"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -298,7 +321,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="~/admin_dashboard/img/undraw_profile_3.svg"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -332,7 +355,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                     src="~/admin_dashboard/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
