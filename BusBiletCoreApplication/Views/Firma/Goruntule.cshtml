@@ -1,0 +1,30 @@
+﻿@using EntityLayer;
+@model EntityLayer.Firma;
+@{
+	ViewData["Title"] = "Goruntule";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Firma", FormMethod.Post))
+{
+	<div class="p-4">
+		<div class="form-group">
+			<h3>Firma Güncelle</h3>
+			@Html.LabelFor(m=>m.firmaId,"Firma Id")
+			@Html.TextBoxFor(m=>m.firmaId, new { @class="form-control"})
+
+			@Html.LabelFor(m=>m.firmaAd,"Firma Adı")
+			@Html.TextBoxFor(m=>m.firmaAd, new { @class="form-control"})
+
+			@Html.LabelFor(m=>m.iletisim,"İletişim")
+			@Html.TextBoxFor(m=>m.iletisim, new { @class="form-control"})
+
+			@Html.LabelFor(m=>m.logoUrl,"Logo")
+			@Html.TextBoxFor(m=>m.logoUrl, new { @class="form-control"})
+		</div>
+		<div>
+			<button class="btn btn-warning">Firma Güncelle</button>
+		</div>
+	</div>
+}
+

@@ -55,5 +55,22 @@ namespace BusBiletCoreApplication.Controllers
 			_firmaService.firmaGuncelle(silinecekFirma);
 			return RedirectToAction("Index");
 		}
+
+        public IActionResult Goruntule(int id)
+        {
+            Firma frm = _firmaService.firmaGetirById(id);
+            return View("Goruntule", frm);
+        }
+
+		public IActionResult Guncelle(Firma firma)
+		{
+			Firma frm = _firmaService.firmaGetirById(firma.firmaId);
+            frm.firmaAd = firma.firmaAd;
+            frm.iletisim = firma.iletisim;
+            frm.logoUrl = firma.logoUrl;
+            return RedirectToAction("Index");
+		}
+
+
 	}
 }
