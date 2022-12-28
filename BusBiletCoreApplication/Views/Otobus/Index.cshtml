@@ -2,41 +2,44 @@
 @model List<Otobus>;
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Otobus Id</th>
-            <th>Koltuk Sayısı</th>
-            <th>Wifi</th>
-            <th>Tv</th>
-            <th>Plaka</th>
-            <th>Marka</th>
-            <th>Model</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.otobusId</td>
-                <td>@item.koltukSayisi</td>
-                <td>@item.wifi</td>
-                <td>@item.tv</td>
-                <td>@item.plaka</td>
-                <td>@item.marka</td>
-                <td>@item.model</td>
-                <td><button type="button" class="btn btn-danger p-2">Sil</button></td>
-                <td><button type="button" class="btn btn-primary p-2">Güncelle</button></td>
-            </tr>
-        }
-
-    </tbody>
+	<thead>
+		<tr>
+			<th>Otobus Id</th>
+			<th>Koltuk Sayısı</th>
+			<th>Wifi</th>
+			<th>Tv</th>
+			<th>Plaka</th>
+			<th>Marka</th>
+			<th>Model</th>
+			<th>Firma Id</th>
+			<th>Güncelle</th>
+			<th>Sil</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var otobus in Model)
+		{
+			<tr>
+				<td>@otobus.otobusId</td>
+				<td>@otobus.koltukSayisi</td>
+				<td>@otobus.wifi</td>
+				<td>@otobus.tv</td>
+				<td>@otobus.plaka</td>
+				<td>@otobus.marka</td>
+				<td>@otobus.model</td>
+				<td>@otobus.firmaId</td>
+				<td><button type="button" class="btn btn-warning p-2">Güncelle</button></td>
+				<td>@Html.ActionLink("SİL","Sil",new {id=otobus.otobusId}, new { @class="btn btn-danger", onclick="return confirm('Silmek İstediğinizden emin misiniz???')"})</td>
+			</tr>
+		}
+	</tbody>
 </table>
-<div class="d-flex justify-content-end p-2">
-    <button type="button" class="btn btn-success p-2">Ekle</button>
+<div class="d-flex justify-content-start p-2">
+	<a href="/Otobus/Ekle" class="btn btn-primary">Yeni Otobüs Ekle</a>
 </div>
 
