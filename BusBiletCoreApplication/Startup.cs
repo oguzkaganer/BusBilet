@@ -59,7 +59,7 @@ namespace BusBiletCoreApplication
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Firma}/{action=Index}");
             });
         }
     }
