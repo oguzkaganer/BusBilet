@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Otobus
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="p-2">
+    <h3>Otobüs Ekle</h3>
+    <form action="/Otobus/Ekle" method="post">
+        <label>Koltuk Sayısı</label>
+        <input class="form-control" type="text" name="koltukSayisi" />
+        <br />
+        <label>Wifi</label>
+        <select class="form-control" name="wifi">
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <br />
+        <label>Tv</label>
+        <select class="form-control" name="tv">
+            <option>True</option>
+            <option>False</option>
+        </select>
+        <br />
+        <label>Plaka</label>
+        <input class="form-control" type="text" name="plaka" />
+        <br />
+        <label>Marka</label>
+        <input class="form-control" type="text" name="marka" />
+        <br />
+        <label>Model</label>
+        <input class="form-control" type="text" name="model" />
+        <br />
+        <label>Firma</label>
+        @*<input class="form-control" type="text" name="firmaId" />*@
+        @Html.DropDownListFor(m=>m.firma.firmaId,(List<SelectListItem>)ViewBag.dgr, new { @class="form-control"})
+        <br />
+        <input class="form-control btn btn-primary" type="submit" value="Ekle" />
+    </form>
+</div>
